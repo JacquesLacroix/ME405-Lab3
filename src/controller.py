@@ -1,10 +1,24 @@
+"""! 
+@file controller.py
+Implements a porportional gain controller for a DC motor with a quadrature encoder
+"""
 import encoder_reader
 import motor_driver
 import utime
 
 class Controller:
-
+    """!
+    This class implements a proportional gain controller for a DC motor with quadrature encoder
+    """
     def __init__(self, encoder, motor, setpoint, kp):
+        """!
+        Create a DC motor controller object with proportional gain from quadrature encoder feedback
+        @param encoder The encoder object used to measure position
+        @param motor The motor driver used to send signals to the motor
+        @param setpoint The target position for the motor to turn to
+        @param kp The proportional gain coefficient for the controller to use
+        @returns Controller
+        """
         self.encoder = encoder
         self.motor = motor
         self.set_setpoint(setpoint)
@@ -13,6 +27,10 @@ class Controller:
         self.positions = []
         
     def run(self):
+        """!
+        Runs one step of the control loop. Changes motor's pulse width and logs the current time and encoder position
+        @returns None
+        """
         PWM = self.kp*(self.setpoint - self.encoder.read())
         self.motor.set_duty_cycle(PWM)
         self.positions.append(self.encoder.read()) 
@@ -20,12 +38,27 @@ class Controller:
         return PWM
     
     def set_setpoint(self, setpoint):
+        """!
+        Allows the user to change the motor's target position
+        @param setpoint The position for the motor to turn to
+        @returns None
+        """
         self.setpoint = setpoint
         
     def set_kp(self, kp):
+        """!
+        Allows the user to change the controller's porportional gain coefficent
+        @param kp The Kp value to set the controller's proportional gain to
+        @returns None
+        """
         self.kp = kp
         
     def print_list(self, start):
+        """!
+
+        @param start Time in milliseconds at which the response test began
+        @returns None
+        """
         for i in range(len(self.times)):
             print(f"{(self.times[i] - start):d}, {self.positions[i]:d}")
         self.times = []

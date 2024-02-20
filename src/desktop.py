@@ -1,6 +1,6 @@
 """!
 @file desktop.py
-Creates a GUI for user to start and visualize response of capacitor circuit. 
+Creates a GUI for user to start and visualize response of DC motor.
 """
 
 import math
@@ -15,7 +15,7 @@ import struct
 
 def plot_response(plot_axes, plot_canvas, xlabel, ylabel):
     """!
-    Starts the step response and plots experimental and theoretical results.
+    Starts the step response and plots experimental results.
     @param plot_axes matplotlib figure which response is plotted on
     @param plot_canvas canvas which the plot will appear
     @param xlabel label for x axis of plot

@@ -1,6 +1,6 @@
 """!
 @file main.py
-Tests input and output of the Nucleo board with a capacitive step response.
+Tests input and output of the Nucleo board with a DC motor response.
 """
 
 import pyb
