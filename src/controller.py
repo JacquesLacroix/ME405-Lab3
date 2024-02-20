@@ -55,7 +55,7 @@ class Controller:
         
     def print_list(self, start):
         """!
-
+        Prints and clears all time and position pairs logged
         @param start Time in milliseconds at which the response test began
         @returns None
         """
