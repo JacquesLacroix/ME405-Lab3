@@ -19,6 +19,6 @@ The following step response was performed with a KP value of 0.8
 ![image](./ExcessiveOscillation.png)
 
 <h3>Best Performance</h3>
-The following step response was performerd
+The following step response was performed with a KP value of 0.6
 
 ![image](./BestPerformance.png)
