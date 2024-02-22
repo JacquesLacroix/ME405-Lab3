@@ -9,16 +9,16 @@ To run the step response, connect and upload `controller.py`, `encoder_reader.py
 Example step responses are shown below:
 
 <h3>Underdamped Response</h3>
-The following step response was performed with a KP value of 0.3
+The following step response was performed with a KP value of 0.03
 
 ![image](./UnderdampedResponse.png)
 
 <h3>Excessive Oscillation</h3>
-The following step response was performed with a KP value of 0.8
+The following step response was performed with a KP value of 0.08
 
 ![image](./ExcessiveOscillation.png)
 
 <h3>Best Performance</h3>
-The following step response was performed with a KP value of 0.43
+The following step response was performed with a KP value of 0.043
 
 ![image](./BestPerformance.png)
